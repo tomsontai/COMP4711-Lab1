@@ -53,16 +53,17 @@ function showInfo() {
         artistTitleClass.setAttribute('class', 'artistTitle');
         artistDescClass.setAttribute('class', 'artistDesc');
 
-        artistTitleClass.textContent = artistArray[0][0];
-        artistInfoClass.textContent = artistArray[0][1];
+        artistTitleClass.textContent = artistArray[0][0].value;
+        artistInfoClass.textContent = artistArray[0][1].value;
 
         artistInfoClass.appendChild(artistTitleClass);
         artistInfoClass.appendChild(artistDescClass);
 
         artistClass.appendChild(artistInfoClass);
 
-        var deleteButtonClass = document.createElement("button");
-        deleteButtonClass.value("Delete");
+        var deleteButtonClass = document.createElement("INPUT");
+        deleteButtonClass.setAttribute("type", "button");
+        deleteButtonClass.setAttribute("value", "Delete");
 
         artistClass.appendChild(deleteButtonClass);
 
