@@ -34,25 +34,63 @@ function addToDatabase() {
 
 function showInfo() {
     if (artistArray.length > 0) {
-/* <div class="artistImage">
-<img src="https://randomuser.me/api/portraits/med/men/87.jpg">
-</div>
-<div class="artistInfo">
-<div class="artistTitle">
-    Barot Bellingham
-</div>
-<div class="artistDesc">
-    Royal Academy of Painting and Sculpture
-</div>
-</div>
-</div> */
-        
+        var artistClass = document.createElement('div');
+
         var artistImg = document.createElement('div');
         artistImg.setAttribute('class', 'artistImage');
-        document.body.appendChild(artistImg);
+        var imageSrc = document.createElement('img');
+        imageSrc.src = artistArray[0][2].value;
+        artistImg.appendChild(imageSrc);
 
-        var imageSrc = document.createElement('src');
 
+        artistClass.appendChild(artistImg);
+
+        var artistInfoClass = document.createElement('div');
+        var artistTitleClass = document.createElement('div');
+        var artistDescClass = document.createElement('div');
+        
+        artistInfoClass.setAttribute('class', 'artistInfo');
+        artistTitleClass.setAttribute('class', 'artistTitle');
+        artistDescClass.setAttribute('class', 'artistDesc');
+
+        artistTitleClass.textContent = artistArray[0][0];
+        artistInfoClass.textContent = artistArray[0][1];
+
+        artistInfoClass.appendChild(artistTitleClass);
+        artistInfoClass.appendChild(artistDescClass);
+
+        artistClass.appendChild(artistInfoClass);
+
+        var deleteButtonClass = document.createElement("button");
+        deleteButtonClass.value("Delete");
+
+        artistClass.appendChild(deleteButtonClass);
+
+        var ulElementId = document.getElementById("ulElement");
+        ulElementId.appendChild(artistClass);
+
+/* <div class="artistImage">
+        <img src="https://randomuser.me/api/portraits/med/men/87.jpg">
+    </div>
+    <div class="artistInfo">
+        <div class="artistTitle">
+            Barot Bellingham
+        </div>
+        <div class="artistDesc">
+            Royal Academy of Painting and Sculpture
+        </div>
+    </div>
+</div> */
+        
+        //document.body.appendChild(artistImg);
+         //<div class="artistImage"></div>
+
+        //document.body.appendChild(imageSrc);
+        // https://randomuser.me/api/portraits/med/women/1.jpg
+
+
+        console.log("artistimg = " + artistImg);
+        console.log("imageSrc = " + imageSrc);
 //         var div = document.createElement('div');
 // div.textContent = "Sup, y'all?";
 // div.setAttribute('class', 'note');
