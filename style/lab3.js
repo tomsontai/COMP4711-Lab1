@@ -1,9 +1,5 @@
 var artistArray = [];
 
-
-// Get a reference to the database service
-var database = firebase.database();
-
 function add_Artist_Form() {
     var x = document.getElementById("inputForm");
     if (x.style.display === "none") {
@@ -15,26 +11,39 @@ function add_Artist_Form() {
 }
 
 function addToDatabase() {
-    artistText = document.getElementById("inputArtistText");
-    aboutText = document.getElementById("inputAboutText");
-    urlText = document.getElementById("inputURLText");
+    let artistText = document.getElementById("inputArtistText");
+    let aboutText = document.getElementById("inputAboutText");
+    let urlText = document.getElementById("inputURLText");
 
-    var temporaryArray = [artistText, aboutText, urlText];
-    for (i = 0; i < temporaryArray.length; i++) {
-        //console.log(temporaryArray[i].value);
-        artistArray.push(temporaryArray);
-    }
-    //console.log("Length is " + artistArray.length);
-    for (i = 0; i < artistArray.length / 3; i++) {
-        console.log(artistArray[0][0].value);
-        console.log(artistArray[0][1].value);
-        console.log(artistArray[0][2].value);
+    // console.log("aaa " + artistText.value);
+    // console.log("bbb " + aboutText.value);
+    // console.log("ccc " + urlText.value);
+
+    if (artistText.value != '' && aboutText.value != '' && urlText != ''){
+        var temporaryArray = [artistText, aboutText, urlText];
+        for (i = 0; i < temporaryArray.length; i++) {
+            //console.log(temporaryArray[i].value);
+            artistArray.push(temporaryArray);
+        }
+        //console.log("Length is " + artistArray.length);
+        // for (i = 0; i < artistArray.length / 3; i++) {
+        //     console.log(artistArray[0][0].value);
+        //     console.log(artistArray[0][1].value);
+        //     console.log(artistArray[0][2].value);
+        // }
     }
 }
 
 function showInfo() {
+
+    // let a = artistArray[0][0].value;
+    // let b = artistArray[0][1].value;
+    // let c = artistArray[0][2].value;
+
+    // if (artistArray.length > 0 && a != '' && b != '' && c != '') {
     if (artistArray.length > 0) {
         var artistClass = document.createElement('div');
+        
 
         var artistImg = document.createElement('div');
         artistImg.setAttribute('class', 'artistImage');
@@ -64,30 +73,13 @@ function showInfo() {
         var deleteButtonClass = document.createElement("INPUT");
         deleteButtonClass.setAttribute("type", "button");
         deleteButtonClass.setAttribute("value", "Delete");
+        deleteButtonClass.setAttribute("id", "deleteButton");
+
 
         artistClass.appendChild(deleteButtonClass);
 
         var ulElementId = document.getElementById("ulElement");
         ulElementId.appendChild(artistClass);
-
-/* <div class="artistImage">
-        <img src="https://randomuser.me/api/portraits/med/men/87.jpg">
-    </div>
-    <div class="artistInfo">
-        <div class="artistTitle">
-            Barot Bellingham
-        </div>
-        <div class="artistDesc">
-            Royal Academy of Painting and Sculpture
-        </div>
-    </div>
-</div> */
-        
-        //document.body.appendChild(artistImg);
-         //<div class="artistImage"></div>
-
-        //document.body.appendChild(imageSrc);
-        // https://randomuser.me/api/portraits/med/women/1.jpg
 
 
         console.log("artistimg = " + artistImg);
@@ -98,4 +90,9 @@ function showInfo() {
 // document.body.appendChild(div);
 // <div class="note">Sup, y'all?</div>.
     }
+}
+
+function deleteFunction() {
+    var x = document.getElementById("ulElement");
+    x.remove(x.selectedIndex);
 }

@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!DOCTYPE html>
     <head>
         <title>COMP 4711 Lab 3 - A01031961, Tomson Tai</title>
         <!-- Latest compiled and minified CSS -->
@@ -18,29 +17,8 @@
     </head>
     
     <body>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-analytics.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCqRHJn6sTYEnwWTHzFnEzLsohEBcOGjWM",
-    authDomain: "comp4711-database.firebaseapp.com",
-    databaseURL: "https://comp4711-database.firebaseio.com",
-    projectId: "comp4711-database",
-    storageBucket: "",
-    messagingSenderId: "573326702560",
-    appId: "1:573326702560:web:ec4ddc8e99559cff515d85",
-    measurementId: "G-K0NPS2QMJ2"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
 
 
     <!-- lab 3 due Oct 1st, by 11:59 pm Tuesday -->
@@ -56,9 +34,9 @@
 
     <div id="inputForm">
         <form>
-            <input type="text" placeholder="Artist Name" name="inputArtistName" id="inputArtistText"> <br>
-            <input type="text" placeholder="About artist" name="inputAbout" id="inputAboutText"> <br>
-            <input type="text" placeholder="Image url" name="inputURL" id="inputURLText"><br>
+            <input type="text" placeholder="Artist Name" name="inputArtistName" id="inputArtistText" required /> <br>
+            <input type="text" placeholder="About artist" name="inputAbout" id="inputAboutText" required />  <br>
+            <input type="text" placeholder="Image url" name="inputURL" id="inputURLText" required /><br>
             <input type="button" onclick="add_Artist_Form(); addToDatabase(); showInfo()" value="Add" >
         </form>
     </div>
@@ -138,7 +116,6 @@
     </div> 
 
 
-<script type="text/javascript" src="/d2l/common/math/MathML.js?v=20.19.8.17540-141 "></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() { D2LMathML.DesktopInit('https://s.brightspace.com/lib/mathjax/2.6.1/MathJax.js?config=MML_HTMLorMML','https://s.brightspace.com/lib/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'); });</script>
 
 </body>
 </html>
