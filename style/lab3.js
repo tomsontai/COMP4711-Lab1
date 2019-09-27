@@ -21,10 +21,10 @@ function addToDatabase() {
 
     if (artistText.value != '' && aboutText.value != '' && urlText != ''){
         var temporaryArray = [artistText, aboutText, urlText];
-        for (i = 0; i < temporaryArray.length; i++) {
+        // for (i = 0; i < temporaryArray.length; i++) {
             //console.log(temporaryArray[i].value);
-            artistArray.push(temporaryArray);
-        }
+        artistArray.push(temporaryArray);
+        // }
         //console.log("Length is " + artistArray.length);
         // for (i = 0; i < artistArray.length / 3; i++) {
         //     console.log(artistArray[0][0].value);
@@ -35,13 +35,15 @@ function addToDatabase() {
 }
 
 function showInfo() {
-
+    let artistText = document.getElementById("inputArtistText");
+    let aboutText = document.getElementById("inputAboutText");
+    let urlText = document.getElementById("inputURLText");
     // let a = artistArray[0][0].value;
     // let b = artistArray[0][1].value;
     // let c = artistArray[0][2].value;
 
     // if (artistArray.length > 0 && a != '' && b != '' && c != '') {
-    if (artistArray.length > 0) {
+    if (artistArray.length > 0 && artistText.value != '' && aboutText.value != '' && urlText != '') {
         var artistClass = document.createElement('div');
         
 
