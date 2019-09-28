@@ -15,6 +15,7 @@ form, ul > div {
 }
 
 #inputForm {
+	display: none;
 	text-align: center;
 }
 .formTitle {

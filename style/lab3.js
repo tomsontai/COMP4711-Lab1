@@ -2,9 +2,12 @@ var artistArray = [];
 
 function add_Artist_Form() {
     var x = document.getElementById("inputForm");
-    if (x.style.display === "none") {
+    //console.log(x.style.display);
+    if (x.style.display == "none" || x.style.display == "") {
+        //console.log("aaa");
         x.style.display = "block";
       } else {
+        //console.log("bbb");
         x.style.display = "none";
       }
 
