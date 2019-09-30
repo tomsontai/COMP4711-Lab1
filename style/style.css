@@ -55,3 +55,6 @@ ul > div {
 	width: 300px;
 	word-wrap: break-word;
 }
+.btn {
+	float: right;
+}
