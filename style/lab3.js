@@ -11,8 +11,13 @@ function add_Artist_Form() {
         x.style.display = "none";
       }
 
+
+
 }
 
+function clearForm(){
+    document.getElementById("inputFormId").reset();
+}
 function addToDatabase() {
     let artistText = document.getElementById("inputArtistText").value;
     let aboutText = document.getElementById("inputAboutText").value;
