@@ -14,39 +14,34 @@ function add_Artist_Form() {
 }
 
 function addToDatabase() {
-    let artistText = document.getElementById("inputArtistText");
-    let aboutText = document.getElementById("inputAboutText");
-    let urlText = document.getElementById("inputURLText");
+    let artistText = document.getElementById("inputArtistText").value;
+    let aboutText = document.getElementById("inputAboutText").value;
+    let urlText = document.getElementById("inputURLText").value;
 
-    // console.log("aaa " + artistText.value);
-    // console.log("bbb " + aboutText.value);
-    // console.log("ccc " + urlText.value);
-
-    if (artistText.value != '' && aboutText.value != '' && urlText != ''){
+    console.log("aaa " + artistText);
+    console.log("bbb " + aboutText);
+    console.log("ccc " + urlText);
+    
+    if (artistText != '' && aboutText != '' && urlText != ''){
         var temporaryArray = [artistText, aboutText, urlText];
         // for (i = 0; i < temporaryArray.length; i++) {
             //console.log(temporaryArray[i].value);
         artistArray.push(temporaryArray);
-        // }
-        //console.log("Length is " + artistArray.length);
-        // for (i = 0; i < artistArray.length / 3; i++) {
-        //     console.log(artistArray[0][0].value);
-        //     console.log(artistArray[0][1].value);
-        //     console.log(artistArray[0][2].value);
-        // }
     }
+
 }
 
 function showAllArtists() {
     if (artistArray.length != 0) {
         for (i = 0; i < artistArray.length; i++) {
             var artistClass = document.createElement('div');
-        
+            artistClass.setAttribute('class', 'artist');
+
 
             var artistImg = document.createElement('div');
             artistImg.setAttribute('class', 'artistImage');
             var imageSrc = document.createElement('img');
-            imageSrc.src = artistArray[i][2].value;
+            imageSrc.src = artistArray[i][2];
             artistImg.appendChild(imageSrc);
 
 
@@ -60,11 +55,13 @@ function showAllArtists() {
             artistTitleClass.setAttribute('class', 'artistTitle');
             artistDescClass.setAttribute('class', 'artistDesc');
 
-            artistTitleClass.textContent = artistArray[i][0].value;
-            artistInfoClass.textContent = artistArray[i][1].value;
-
+            artistTitleClass.textContent = artistArray[i][0];
+            artistDescClass.textContent = artistArray[i][1];
+            
             artistInfoClass.appendChild(artistTitleClass);
             artistInfoClass.appendChild(artistDescClass);
+            
+            
 
             artistClass.appendChild(artistInfoClass);
 
@@ -73,7 +70,9 @@ function showAllArtists() {
             deleteButtonClass.setAttribute("value", "Delete");
             deleteButtonClass.setAttribute("id", "delete" + artistArray.length);
             deleteButtonClass.setAttribute("onclick", "deleteFunction(this)");
-            deleteButtonClass.setAttribute("name", artistArray.length - 1)
+            deleteButtonClass.setAttribute("name", i);
+            deleteButtonClass.setAttribute("class", "btn btn-danger");
+
             
             //deleteButtonClass.addEventListener('onClick', 'deleteFunction()');
             artistClass.appendChild(deleteButtonClass);
@@ -87,22 +86,18 @@ function showAllArtists() {
 }
 
 function showInfo() { // Displays the artist being added to the array.
-    let artistText = document.getElementById("inputArtistText");
-    let aboutText = document.getElementById("inputAboutText");
-    let urlText = document.getElementById("inputURLText");
-    // let a = artistArray[0][0].value;
-    // let b = artistArray[0][1].value;
-    // let c = artistArray[0][2].value;
+    let artistText = document.getElementById("inputArtistText").value;
+    let aboutText = document.getElementById("inputAboutText").value;
+    let urlText = document.getElementById("inputURLText").value;
 
-    // if (artistArray.length > 0 && a != '' && b != '' && c != '') {
-    if (artistArray.length > 0 && artistText.value != '' && aboutText.value != '' && urlText != '') {
+    if (artistArray.length > 0 && artistText != '' && aboutText != '' && urlText != '') {
         var artistClass = document.createElement('div');
-        
+        artistClass.setAttribute('class', 'artist');
 
         var artistImg = document.createElement('div');
         artistImg.setAttribute('class', 'artistImage');
         var imageSrc = document.createElement('img');
-        imageSrc.src = artistArray[artistArray.length - 1][2].value;
+        imageSrc.src = artistArray[artistArray.length - 1][2];
         artistImg.appendChild(imageSrc);
 
 
@@ -116,9 +111,10 @@ function showInfo() { // Displays the artist being added to the array.
         artistTitleClass.setAttribute('class', 'artistTitle');
         artistDescClass.setAttribute('class', 'artistDesc');
 
-        artistTitleClass.textContent = artistArray[artistArray.length - 1][0].value;
-        artistInfoClass.textContent = artistArray[artistArray.length - 1][1].value;
+        artistTitleClass.textContent = artistArray[artistArray.length - 1][0];
+        artistDescClass.textContent = artistArray[artistArray.length - 1][1];
 
+        
         artistInfoClass.appendChild(artistTitleClass);
         artistInfoClass.appendChild(artistDescClass);
 
@@ -130,23 +126,20 @@ function showInfo() { // Displays the artist being added to the array.
         deleteButtonClass.setAttribute("id", "delete" + artistArray.length);
         deleteButtonClass.setAttribute("onclick", "deleteFunction(this)");
         deleteButtonClass.setAttribute("name", artistArray.length - 1)
+        deleteButtonClass.setAttribute("class", "btn btn-danger");
+
         
-        //deleteButtonClass.addEventListener('onClick', 'deleteFunction()');
         artistClass.appendChild(deleteButtonClass);
 
         var ulElementId = document.getElementById("ulElement");
         ulElementId.appendChild(artistClass);
 
-        // console.log("delete button id = " + deleteButtonClass.id);
         console.log("name = " + deleteButtonClass.name);
-        // console.log("artistimg = " + artistImg);
-        // console.log("imageSrc = " + imageSrc);
-//         var div = document.createElement('div');
-// div.textContent = "Sup, y'all?";
-// div.setAttribute('class', 'note');
-// document.body.appendChild(div);
-// <div class="note">Sup, y'all?</div>.
+
     }
+
+    // CLEAR FORM
+    document.getElementById("inputFormId").reset();
 }
 
 function deleteFunction(obj) {
