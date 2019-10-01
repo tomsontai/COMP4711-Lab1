@@ -47,6 +47,7 @@ function showAllArtists() {
             artistImg.setAttribute('class', 'artistImage');
             var imageSrc = document.createElement('img');
             imageSrc.src = artistArray[i][2];
+            imageSrc.setAttribute('class', 'imageProperty');
             artistImg.appendChild(imageSrc);
 
 
@@ -103,6 +104,8 @@ function showInfo() { // Displays the artist being added to the array.
         artistImg.setAttribute('class', 'artistImage');
         var imageSrc = document.createElement('img');
         imageSrc.src = artistArray[artistArray.length - 1][2];
+        imageSrc.setAttribute('class', 'imageProperty');
+
         artistImg.appendChild(imageSrc);
 
 

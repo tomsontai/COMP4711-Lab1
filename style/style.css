@@ -46,7 +46,7 @@ ul > div {
 	cursor: pointer;
 }
 .artistTitle {
-	width: 290px;
+	width: 280px;
 	font-weight: bold;
 	word-wrap: break-word;
 }
@@ -54,9 +54,13 @@ ul > div {
     vertical-align: top;
 }
 .artistDesc {
-	width: 290px;
+	width: 280px;
 	word-wrap: break-word;
 }
 .btn {
-	float: right;
+    float: right;
+}
+.imageProperty {
+    width: 72px;
+    height: auto;
 }
