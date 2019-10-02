@@ -18,6 +18,9 @@ form, ul > div {
 	display: none;
 	text-align: center;
 }
+
+
+
 .formTitle {
     text-align: left;
     font-size: 2em;
@@ -63,4 +66,7 @@ ul > div {
 .imageProperty {
     width: 72px;
     height: auto;
+}
+input {
+    text-align: center;
 }
