@@ -72,5 +72,5 @@ input {
 }
 
 #baseDiv {
-    display: none;
+    display: block;
 }
