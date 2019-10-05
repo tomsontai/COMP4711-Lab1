@@ -70,3 +70,7 @@ ul > div {
 input {
     text-align: center;
 }
+
+#baseDiv {
+    display: none;
+}

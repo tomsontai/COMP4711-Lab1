@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    <head>
+        <title>COMP 4711 Lab 3 - A01031961, Tomson Tai</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link href="../style/style.css" rel="stylesheet" />
+        <script src="../style/lab4.js"></script>
+    </head>
+    
+    <body>
+
+
+
+
+    <!-- lab 4 due Oct 8th, next Tuesday at 11:59 pm -->
+
+    <div>
+        <form>
+            <p class="formTitle">Artist Directory</p>
+            <br>
+            <input type="text" name="aName" class="aFormName">
+            <input type="button" name="addArtistButton" class="addArtistFormButton" value="Add Artist" onclick="add_Artist_Form(); clearForm()">
+        </form>
+    </div>
+
+    <div id="inputForm">
+        <form id="inputFormId">
+            <input maxlength="40" type="text" placeholder="Artist Name" name="inputArtistName" id="inputArtistText" required /> <br>
+            <input maxlength="40" type="text" placeholder="About artist" name="inputAbout" id="inputAboutText" required />  <br>
+            <input type="text" placeholder="Image url" name="inputURL" id="inputURLText" required /><br>
+            <input type="button" onclick="add_Artist_Form(); addToDatabase(); showInfo()" value="Add" >
+        </form>
+    </div>
+
+    
+    <div id="baseDiv">
+        <ul id="ulElement">
+
+        </ul>
+    </div> 
+
+
+
+</body>
+</html>
