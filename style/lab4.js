@@ -12,10 +12,12 @@ const artistArray = [];
 
 //displayData();
 
-if (window.localStorage.length > 0) {
-    // load stuff
-    showAllArtists();
-} 
+showAllArtists();
+
+// if (window.localStorage.length > 0) {
+//     // load stuff
+//     showAllArtists();
+// } 
 
 function add_Artist_Form() {
     var x = document.getElementById("inputForm");
@@ -109,7 +111,7 @@ function showAllArtists() {
             var deleteButtonClass = document.createElement("INPUT");
             deleteButtonClass.setAttribute("type", "button");
             deleteButtonClass.setAttribute("value", "Delete");
-            deleteButtonClass.setAttribute("id", "delete" + artistArray.length);
+            deleteButtonClass.setAttribute("id", "delete" + i);
             deleteButtonClass.setAttribute("onclick", "deleteFunction(this)");
             deleteButtonClass.setAttribute("name", i);
             deleteButtonClass.setAttribute("class", "btn btn-danger");
@@ -119,11 +121,12 @@ function showAllArtists() {
             artistClass.appendChild(deleteButtonClass);
 
             var ulElementId = document.getElementById("ulElement");
+            console.log(artistClass);
             ulElementId.appendChild(artistClass);
         }
 
     }
-
+    console.log("function called to here!");
 }
 
 function showInfo() { // Displays the artist being added to the array.
@@ -169,9 +172,9 @@ function showInfo() { // Displays the artist being added to the array.
         var deleteButtonClass = document.createElement("INPUT");
         deleteButtonClass.setAttribute("type", "button");
         deleteButtonClass.setAttribute("value", "Delete");
-        deleteButtonClass.setAttribute("id", "delete" + artistArray.length);
+        deleteButtonClass.setAttribute("id", "delete" + "0");
         deleteButtonClass.setAttribute("onclick", "deleteFunction(this)");
-        deleteButtonClass.setAttribute("name", artistArray.length - 1)
+        deleteButtonClass.setAttribute("name", "0");
         deleteButtonClass.setAttribute("class", "btn btn-danger");
 
         
