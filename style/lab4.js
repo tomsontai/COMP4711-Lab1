@@ -113,7 +113,7 @@ function showAllArtists() {
             deleteButtonClass.setAttribute("value", "Delete");
             deleteButtonClass.setAttribute("id", "delete" + i);
             deleteButtonClass.setAttribute("onclick", "deleteFunction(this)");
-            deleteButtonClass.setAttribute("name", i);
+            deleteButtonClass.setAttribute("name", localStorage.key(i));
             deleteButtonClass.setAttribute("class", "btn btn-danger");
 
             
@@ -160,7 +160,7 @@ function showInfo() { // Displays the artist being added to the array.
         artistTitleClass.setAttribute('class', 'artistTitle');
         artistDescClass.setAttribute('class', 'artistDesc');
 
-        artistTitleClass.textContent = localStorage.key(0);
+        artistTitleClass.textContent = artistText;
         artistDescClass.textContent = JSON.parse(localStorage.getItem(artistText)).about;
 
         
@@ -174,7 +174,7 @@ function showInfo() { // Displays the artist being added to the array.
         deleteButtonClass.setAttribute("value", "Delete");
         deleteButtonClass.setAttribute("id", "delete" + "0");
         deleteButtonClass.setAttribute("onclick", "deleteFunction(this)");
-        deleteButtonClass.setAttribute("name", "0");
+        deleteButtonClass.setAttribute("name", localStorage.key(0));
         deleteButtonClass.setAttribute("class", "btn btn-danger");
 
         
@@ -198,11 +198,13 @@ function deleteFunction(obj) {
     
     console.log("Object is " + obj.name);
 
+    
+    window.localStorage.removeItem(obj.name);
     //if (this) {
         
        // console.log("what's this? " + x.name);
-        artistArray.splice(parseInt(obj.name, 10), 1);
-        y.remove();
+        //artistArray.splice(parseInt(obj.name, 10), 1);
+       y.remove();
     //}
     var z = document.getElementById("baseDiv");
 
