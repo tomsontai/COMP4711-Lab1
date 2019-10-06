@@ -77,6 +77,7 @@ function showAllArtists() {
         for (i = 0, len = localStorage.length; i < len; ++i) {
             var artistClass = document.createElement('div');
             artistClass.setAttribute('class', 'artist');
+            artistClass.setAttribute('id', localStorage.key(i));
 
             console.log("Calling showAllArtists() method")
 
@@ -140,6 +141,7 @@ function showInfo() { // Displays the artist being added to the array.
     if (window.localStorage.length > 0 && artistText != '' && aboutText != '' && urlText != '') {
         var artistClass = document.createElement('div');
         artistClass.setAttribute('class', 'artist');
+        artistClass.setAttribute('id', localStorage.key(i));
 
         var artistImg = document.createElement('div');
         artistImg.setAttribute('class', 'artistImage');
@@ -222,6 +224,37 @@ function deleteFunction(obj) {
     // console.log(y.id);
     showAllArtists();
 
+}
+
+function search_Artist() {
+
+    var inputText = document.getElementById("aFormNameId");
+
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("aFormNameId");
+    
+    filter = input.value.toUpperCase();
+    // ul = document.getElementById("ulElement");
+    // li = ul.getElementsByTagName("li");
+    for (i = 0; i < localStorage.length; i++) {
+        //a = li[i].getElementsByTagName("a")[0];
+        // FIX HERE LATER
+        a = localStorage.key(i);
+
+        //txtValue = a.textContent || a.innerText;
+        if (a.toUpperCase().indexOf(filter) > -1) {
+            document.getElementById(localStorage.key(i)).style.display = "";
+            //li[i].style.display = "";
+            
+
+        } else {
+            document.getElementById(localStorage.key(i)).style.display ="none";
+        }
+    }
+
+
+    // console.log("value is " + inputText.value);
+    // console.log("search function called");
 }
 
 // function displayData() {
