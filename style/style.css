@@ -32,7 +32,10 @@ form, ul > div {
     margin: auto;   
 }
 .addArtistFormButton {
-	width: 25%;
+	width: 13%;
+}
+.searchArtistClassButton {
+    width: 13%;
 }
 .artistInfo, .artistImage {
     display: inline-block;
