@@ -141,7 +141,7 @@ function showInfo() { // Displays the artist being added to the array.
     if (window.localStorage.length > 0 && artistText != '' && aboutText != '' && urlText != '') {
         var artistClass = document.createElement('div');
         artistClass.setAttribute('class', 'artist');
-        artistClass.setAttribute('id', localStorage.key(i));
+        artistClass.setAttribute('id', localStorage.key(0));
 
         var artistImg = document.createElement('div');
         artistImg.setAttribute('class', 'artistImage');
