@@ -1,23 +1,7 @@
 const artistArray = [];
 
-// Check browser support
-// if (typeof(Storage) !== "undefined") {
-//     // Store
-//     localStorage.setItem("lastname", "Smith");
-//     // Retrieve
-//     document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-// } else {
-//     document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-// }
-
-//displayData();
-
 showAllArtists();
 
-// if (window.localStorage.length > 0) {
-//     // load stuff
-//     showAllArtists();
-// } 
 
 function add_Artist_Form() {
     var x = document.getElementById("inputForm");
@@ -43,10 +27,6 @@ function addToDatabase() {
     let artistText = document.getElementById("inputArtistText").value;
     let aboutText = document.getElementById("inputAboutText").value;
     let urlText = document.getElementById("inputURLText").value;
-
-    // console.log("aaa " + artistText);
-    // console.log("bbb " + aboutText);
-    // console.log("ccc " + urlText);
     
     if (artistText != '' && aboutText != '' && urlText != ''){
         //var temporaryArray = [aboutText, urlText];
@@ -55,14 +35,8 @@ function addToDatabase() {
         // This stores the key for search later. 
         artistArray.push(artistText);
 
-        //var temporaryArray = [aboutText, urlText];
-        // for (i = 0; i < temporaryArray.length; i++) {
-            //console.log(temporaryArray[i].value);
-        //artistArray.push(temporaryArray);
         localStorage.setItem(artistText, JSON.stringify(obj));
 
-        // console.log("Testing local storage: " + localStorage.getItem(artistText)[0]);
-        // console.log("Testing local storage: " + localStorage.getItem(artistText)[1]);
         console.log("Testing local storage: " + JSON.parse(localStorage.getItem(artistText)).about);
         console.log("Testing local storage: " + JSON.parse(localStorage.getItem(artistText)).url);
 
