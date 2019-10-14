@@ -33,12 +33,12 @@ function addToDatabase() {
         var obj = { about: aboutText, url: urlText };
 
         // This stores the key for search later. 
-        artistArray.push(artistText);
+        // artistArray.push(artistText);
 
-        localStorage.setItem(artistText, JSON.stringify(obj));
+        // localStorage.setItem(artistText, JSON.stringify(obj));
 
-        console.log("Testing local storage: " + JSON.parse(localStorage.getItem(artistText)).about);
-        console.log("Testing local storage: " + JSON.parse(localStorage.getItem(artistText)).url);
+        // console.log("Testing local storage: " + JSON.parse(localStorage.getItem(artistText)).about);
+        // console.log("Testing local storage: " + JSON.parse(localStorage.getItem(artistText)).url);
 
     }
 
@@ -51,14 +51,14 @@ function showAllArtists() {
         for (i = 0, len = localStorage.length; i < len; ++i) {
             var artistClass = document.createElement('div');
             artistClass.setAttribute('class', 'artist');
-            artistClass.setAttribute('id', localStorage.key(i));
+            // artistClass.setAttribute('id', localStorage.key(i));
 
             console.log("Calling showAllArtists() method")
 
             var artistImg = document.createElement('div');
             artistImg.setAttribute('class', 'artistImage');
             var imageSrc = document.createElement('img');
-            imageSrc.src = JSON.parse(localStorage.getItem(localStorage.key(i))).url;  // artistText is not defined in this method.
+            // imageSrc.src = JSON.parse(localStorage.getItem(localStorage.key(i))).url;  // artistText is not defined in this method.
             imageSrc.setAttribute('class', 'imageProperty');         
             artistImg.appendChild(imageSrc);
 
@@ -73,8 +73,8 @@ function showAllArtists() {
             artistTitleClass.setAttribute('class', 'artistTitle');
             artistDescClass.setAttribute('class', 'artistDesc');
 
-            artistTitleClass.textContent = localStorage.key(i);
-            artistDescClass.textContent = JSON.parse(localStorage.getItem(localStorage.key(i))).about;
+            // artistTitleClass.textContent = localStorage.key(i);
+            // artistDescClass.textContent = JSON.parse(localStorage.getItem(localStorage.key(i))).about;
             
             artistInfoClass.appendChild(artistTitleClass);
             artistInfoClass.appendChild(artistDescClass);
@@ -115,7 +115,7 @@ function showInfo() { // Displays the artist being added to the array.
     if (window.localStorage.length > 0 && artistText != '' && aboutText != '' && urlText != '') {
         var artistClass = document.createElement('div');
         artistClass.setAttribute('class', 'artist');
-        artistClass.setAttribute('id', localStorage.key(0));
+        // artistClass.setAttribute('id', localStorage.key(0));
 
         var artistImg = document.createElement('div');
         artistImg.setAttribute('class', 'artistImage');
@@ -137,7 +137,7 @@ function showInfo() { // Displays the artist being added to the array.
         artistDescClass.setAttribute('class', 'artistDesc');
 
         artistTitleClass.textContent = artistText;
-        artistDescClass.textContent = JSON.parse(localStorage.getItem(artistText)).about;
+        // artistDescClass.textContent = JSON.parse(localStorage.getItem(artistText)).about;
 
         
         artistInfoClass.appendChild(artistTitleClass);
@@ -150,7 +150,7 @@ function showInfo() { // Displays the artist being added to the array.
         deleteButtonClass.setAttribute("value", "Delete");
         deleteButtonClass.setAttribute("id", "delete" + "0");
         deleteButtonClass.setAttribute("onclick", "deleteFunction(this)");
-        deleteButtonClass.setAttribute("name", localStorage.key(0));
+        // deleteButtonClass.setAttribute("name", localStorage.key(0));
         deleteButtonClass.setAttribute("class", "btn btn-danger");
 
         

@@ -1,14 +1,14 @@
 {{#each artist}}
 <div class="artist">
     <div class="artistImage">
-        <img src="https://randomuser.me/api/portraits/med/men/87.jpg">
+        <img src="{{this.url}}">
     </div>
     <div class="artistInfo">
         <div class="artistTitle">
-            Barot Bellingham
+            {{this.name}}
         </div>
         <div class="artistDesc">
-            Royal Academy of Painting and Sculpture
+            {{this.about}}
         </div>
     </div>
 </div>
