@@ -29,6 +29,9 @@ router.get('/artist/add', (req,res) => {
        about: a_about,
        url: a_imageURL
     }
+    console.log("name is = " + aOject.name);
+    console.log("about is = " + aOject.about);
+    console.log("url is = " + aOject.url);
  
     mod.add(aOject);
     res.redirect(301, '/artists');

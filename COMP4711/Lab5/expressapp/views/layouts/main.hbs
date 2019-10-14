@@ -24,11 +24,12 @@
     </div>
 
     <div id="inputForm">
-        <form id="inputFormId" action = "http://localhost:3000/file_upload" method = "POST">
-            <input maxlength="40" type="text" placeholder="Artist Name" name="inputArtistName" id="inputArtistText" required /> <br>
-            <input maxlength="40" type="text" placeholder="About artist" name="inputAbout" id="inputAboutText" required />  <br>
-            <input type="text" placeholder="Image url" name="inputURL" id="inputURLText" required /><br>
-            <input type="button" onclick="add_Artist_Form(); addToDatabase(); showInfo()" value="Add" >
+        <form id="inputFormId" action = "/artists/add" method = "POST">
+            <input maxlength="40" type="text" placeholder="Artist Name" name="inputArtistName" id="inputArtistText" value='Josh' /> <br>
+            <input maxlength="40" type="text" placeholder="About artist" name="inputAbout" id="inputAboutText" value='Best of the season' />  <br>
+            <input type="text" placeholder="Image url" name="inputURL" id="inputURLText" value='https://randomuser.me/api/portraits/med/men/65.jpg' /><br>
+            <!-- <input type="button" onclick="add_Artist_Form(); addToDatabase(); showInfo()" value="Add" > -->
+            <button class="btn" type="submit">Add</button>
         </form>
     </div>
 
