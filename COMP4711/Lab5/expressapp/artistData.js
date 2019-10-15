@@ -25,15 +25,24 @@ function deleteArtist(id) {
             a.splice(i, 1);
         }
     }
-  
+ }
 
-    //a.splice(id, 1);
-}
+ function searchArtists(matchString) {
+    let arr = [];
+    for (var i = 0; i < a.length; i++) {
+         if (a[i].name.indexOf(matchString) !== -1) {
+             arr.push(a[i]);
+        }
+    }
+    
+    return arr;
+ }
 
 module.exports = {
     add : addArtists,
     getall : getAllArtists,
     getpeople: getArtist,
     count: getCount(),
-    delete: deleteArtist
+    delete: deleteArtist,
+    search: searchArtists
 }

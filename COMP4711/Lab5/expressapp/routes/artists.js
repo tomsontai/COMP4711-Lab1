@@ -25,14 +25,14 @@ router.get('/artist/add', (req,res) => {
     res.render('artistadd');
  });
 
-
-
-  
-//  router.get('/artist/:id', (req,res) => {
-//     let id = req.params.id;
-//     let Artist = mod.getartist(id);
-//     res.render('artists', { Artists, artistCSS: true });
-//  });
+router.post('/artists/search', (req,res) => {
+   console.log("==== Search ====");
+   let a_name = req.body.name;
+   let SearchResult = mod.search(a_name);
+   res.render('artists', {artist: SearchResult });
+   //res.render('artistadd');
+   //res.redirect(301, '/artists');
+}); 
 
  router.post('/artists/add', (req, res) => {
     let a_name = req.body.name;
@@ -53,6 +53,7 @@ router.get('/artist/add', (req,res) => {
     //console.log(mod.getall());
     res.redirect(301, '/artists');
   });
+
 
  // Defines a custom 404 Page and we use app.use because
 // the request didn't match a route (Must follow the routes)

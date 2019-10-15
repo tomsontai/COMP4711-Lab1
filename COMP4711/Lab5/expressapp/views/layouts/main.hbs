@@ -14,19 +14,13 @@
     <!-- lab 4 due Oct 8th, next Tuesday at 11:59 pm -->
 
     <div>
-        <form>
+        <form id="searchFormId" action = "/artists/search" method = "POST">
             <p class="formTitle">Artist Directory</p>
             <br>
-            <input type="text" name="aName" class="aFormName" id="aFormNameId"  > 
+            <input type="text" name="name" class="aFormName" id="name"  > 
             <a href="/artist/add">Add Artist</a>
- {{!--            <input name="addArtistButton" id="addArtistButton" value="Add Artist" type="submit" />
-                <script>
-                    $('#addArtistButton').click(function(){
-                        console.log('Add button is click');
-                    });
-                </script>
- --}}            {{!-- <input type="button" name="addArtistButton" class="addArtistFormButton" value="Add Artist" onclick="add_Artist_Form(); clearForm()"> --}}
-            <input type="button" name="searchArtistButton" class="searchArtistClassButton" value="Search" onclick="search_Artist() ">
+            {{!-- <a href="/artist/search">Search</a> --}}
+            <input type="submit" class="searchArtistClassButton" value="Search">
         </form>
     </div>
 
