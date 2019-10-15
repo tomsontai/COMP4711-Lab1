@@ -13,7 +13,9 @@ const router = express.Router();
   */
 router.get('/artists', (req,res) => {
     let Artists = mod.getall();
-    res.render('artists', {artists: Artists });
+    console.log("All artists:")
+    console.log(Artists);
+    res.render('artists', {artist: Artists });
 });
 
 router.get('/artist/add', (req,res) => {
@@ -28,22 +30,24 @@ router.get('/artist/add', (req,res) => {
 
  router.post('/artists/add', (req, res) => {
     console.log ('Add artist');
-   //  let a_name = req.body.inputArtistName;
-   //  let a_about = req.body.inputAbout;
-   //  let a_imageURL = req.body.inputURL;
+    let a_name = req.body.name;
+    let a_about = req.body.about;
+    let a_imageURL = req.body.imageURL;
  
-   //  let aOject = {
-   //     name: a_name,
-   //     about: a_about,
-   //     url: a_imageURL
-   //  }
-   //  console.log("name is = " + aOject.name);
-   //  console.log("about is = " + aOject.about);
-   //  console.log("url is = " + aOject.url);
+    let aOject = {
+       name: a_name,
+       about: a_about,
+       imageurl: a_imageURL
+    }
+    console.log("name is = " + a_name);
+    console.log("about is = " + a_about);
+    console.log("url is = " + a_imageURL);
  
-   //  mod.add(aOject);
-   //  res.redirect(301, '/artists');
- });
+    mod.add(aOject);
+
+    console.log(mod.getall());
+    res.redirect(301, '/artists');
+  });
 
  // Defines a custom 404 Page and we use app.use because
 // the request didn't match a route (Must follow the routes)
