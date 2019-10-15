@@ -4,16 +4,20 @@ let mod = require('../artistData');
 
 const router = express.Router();
 
-/* router.get('/add', (req, res) => {
-   console.log('Get Add button is click');
- });
- router.post('/add', (req, res) => {
-   console.log('Post Add button is click');
- });
-  */
+router.get('/artist/remove/:id', (req,res) => {
+   console.log("============Get Delete Artist=================");
+  // console.log(req.params.obj);
+  //  let id = Number(req.params.id);
+  //  mod.delete(id); 
+
+  //  console.log(mod.getall());
+   res.redirect(301, '/artists');
+
+});
+
 router.get('/artists', (req,res) => {
     let Artists = mod.getall();
-    console.log("All artists:")
+   //  console.log("All artists:")
     console.log(Artists);
     res.render('artists', {artist: Artists });
 });
@@ -21,31 +25,33 @@ router.get('/artists', (req,res) => {
 router.get('/artist/add', (req,res) => {
     res.render('artistadd');
  });
+
+
+
   
- router.get('/artist/:id', (req,res) => {
-    let id = req.params.id;
-    let Artist = mod.getartist(id);
-    res.render('artists', { Artists, artistCSS: true });
- });
+//  router.get('/artist/:id', (req,res) => {
+//     let id = req.params.id;
+//     let Artist = mod.getartist(id);
+//     res.render('artists', { Artists, artistCSS: true });
+//  });
 
  router.post('/artists/add', (req, res) => {
-    console.log ('Add artist');
     let a_name = req.body.name;
     let a_about = req.body.about;
     let a_imageURL = req.body.imageURL;
- 
+
+    let count = mod.count;
+
     let aOject = {
+       id: count,
        name: a_name,
        about: a_about,
        imageurl: a_imageURL
     }
-    console.log("name is = " + a_name);
-    console.log("about is = " + a_about);
-    console.log("url is = " + a_imageURL);
- 
+
     mod.add(aOject);
 
-    console.log(mod.getall());
+    //console.log(mod.getall());
     res.redirect(301, '/artists');
   });
 

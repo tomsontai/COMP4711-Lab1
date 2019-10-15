@@ -1,18 +1,24 @@
-{{#each artist}}
-<div class="artists">
-    <div class="artistImage">
-        <img src="{{this.imageURL}}">
-    </div>
-    <div class="artistInfo">
-        <div class="artistTitle">
-            {{this.name}}
-        </div>
-        <div class="artistDesc">
-            {{this.about}}
-        </div>
-    </div>
-</div>
-{{/each}}
+<div id="baseDiv">
+    <ul id="ulElement">
+
+        {{#each artist}}
+            <div class="artists">
+                <div class="artistImage">
+                    <img src="{{this.imageurl}}">
+                </div>
+                <div class="artistInfo">
+                    <div class="artistTitle">
+                        {{this.name}}
+                    </div>
+                    <div class="artistDesc">
+                        {{this.about}}
+                    </div>
+                </div>
+                <a href="/artist/remove/{{this.id}}">Delete</a>
+            </div>
+        {{/each}}
+    </ul>
+</div> 
 
 {{!-- TEST DATA
 <div class="artist">
