@@ -2,6 +2,7 @@
     <ul id="ulElement">
 
         {{#each artist}}
+        <form method="POST" action="/delete/{{this.id}}">
             <div class="artists">
                 <div class="artistImage">
                     <img src="{{this.imageurl}}">
@@ -14,8 +15,10 @@
                         {{this.about}}
                     </div>
                 </div>
-                <a href="/delete/{{this.id}}">Delete</a>
+                <!-- a href="/delete/{{this.id}}">Delete</a-->
+                <button type="submit">Delete</button>
             </div>
+        </form>
         {{/each}}
     </ul>
 </div> 

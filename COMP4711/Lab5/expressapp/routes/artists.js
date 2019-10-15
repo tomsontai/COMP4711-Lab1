@@ -14,6 +14,16 @@ router.get('/delete/:id', (req,res) => {
    res.redirect(301, '/artists');
 });
 
+router.post('/delete/:id', (req,res) => {
+   console.log("============Get Delete Artist=================");
+   console.log(req.params.id);
+   let id = Number(req.params.id);
+   mod.delete(id); 
+
+   // console.log(mod.getall());
+   res.redirect(301, '/artists');
+});
+
 router.get('/artists', (req,res) => {
     let Artists = mod.getall();
    //  console.log("All artists:")

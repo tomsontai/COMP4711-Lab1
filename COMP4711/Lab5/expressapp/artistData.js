@@ -20,8 +20,9 @@ function getCount() {
 }
 
 function deleteArtist(id) {
-    for (var i = a.length; i--;) {
-        if (a[i].id === id) {
+    //for (var i = a.length; i--;) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i].id == id) {
             a.splice(i, 1);
         }
     }
@@ -30,7 +31,7 @@ function deleteArtist(id) {
  function searchArtists(matchString) {
     let arr = [];
     for (var i = 0; i < a.length; i++) {
-         if (a[i].name.indexOf(matchString) !== -1) {
+         if (a[i].name.toUpperCase().indexOf(matchString.toUpperCase()) !== -1) {
              arr.push(a[i]);
         }
     }
