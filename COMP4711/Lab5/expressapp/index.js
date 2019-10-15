@@ -26,7 +26,7 @@ app.engine(
   app.set('views', 'views');
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false })) // middleware
+app.use(bodyParser.urlencoded({ extended: true })) // middleware
 
 // parse application/json
 app.use(bodyParser.json()) // middleware
@@ -59,7 +59,7 @@ app.get('/', function (req,res) {
 
 // Defines a custom 404 Page and we use app.use because
 // the request didn't match a route (Must follow the routes)
-app.use(function(req, res) {
+/* app.use(function(req, res) {
     // Define the content type
     res.type('text/html');
    
@@ -67,8 +67,8 @@ app.use(function(req, res) {
     res.status(404);
    
     // Point at the 404.handlebars view
-    res.render('404');
-});
+    res.render('partials/404');
+}); */
 
 
   // Custom 500 Page

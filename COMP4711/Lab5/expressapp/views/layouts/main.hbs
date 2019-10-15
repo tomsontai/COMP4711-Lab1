@@ -18,12 +18,19 @@
             <p class="formTitle">Artist Directory</p>
             <br>
             <input type="text" name="aName" class="aFormName" id="aFormNameId"  > 
-            <input type="button" name="addArtistButton" class="addArtistFormButton" value="Add Artist" onclick="add_Artist_Form(); clearForm()">
+            <a href="/artist/add">Add Artist</a>
+ {{!--            <input name="addArtistButton" id="addArtistButton" value="Add Artist" type="submit" />
+                <script>
+                    $('#addArtistButton').click(function(){
+                        console.log('Add button is click');
+                    });
+                </script>
+ --}}            {{!-- <input type="button" name="addArtistButton" class="addArtistFormButton" value="Add Artist" onclick="add_Artist_Form(); clearForm()"> --}}
             <input type="button" name="searchArtistButton" class="searchArtistClassButton" value="Search" onclick="search_Artist() ">
         </form>
     </div>
 
-    <div id="inputForm">
+{{!--     <div id="inputForm">
         <form id="inputFormId" action = "/artists/add" method = "POST">
             <input maxlength="40" type="text" placeholder="Artist Name" name="inputArtistName" id="inputArtistText" value='Josh' /> <br>
             <input maxlength="40" type="text" placeholder="About artist" name="inputAbout" id="inputAboutText" value='Best of the season' />  <br>
@@ -39,9 +46,10 @@
             
         </ul>
     </div> 
+ --}}
+    {{{ body }}}
 
-
-    {{>footer}}
+    {{!-- {{>footer}} --}}
     
 </body>
 </html>
