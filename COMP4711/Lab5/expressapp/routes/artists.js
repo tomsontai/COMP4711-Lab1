@@ -4,15 +4,14 @@ let mod = require('../artistData');
 
 const router = express.Router();
 
-router.get('/artist/remove/:id', (req,res) => {
+router.get('/delete/:id', (req,res) => {
    console.log("============Get Delete Artist=================");
-  // console.log(req.params.obj);
-  //  let id = Number(req.params.id);
-  //  mod.delete(id); 
+   console.log(req.params.id);
+   let id = Number(req.params.id);
+   mod.delete(id); 
 
-  //  console.log(mod.getall());
+   // console.log(mod.getall());
    res.redirect(301, '/artists');
-
 });
 
 router.get('/artists', (req,res) => {
