@@ -1,0 +1,54 @@
+body {
+    background-color: rgb(12, 12, 142);
+    overflow-x: hidden;
+    font-family: 'Noto Sans TC', sans-serif;
+    height: 100em;
+}
+
+h3 {
+    padding-left: 20px;
+    word-spacing: 100px;
+    color: rgb(27, 4, 4);
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+#play-button {
+    margin-top: 10em;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(52, 184, 116);
+    color: rgb(228, 217, 217);
+}
+
+#play-button:hover {
+    cursor: pointer;
+}
+
+#container {
+    margin-top: 7em;
+    text-align: center; /* Center container contents. Contents must be in display: inline-block container */
+}
+
+#attempt-counter {
+    margin-top: 1em;
+    text-align: center;
+    color: white;
+}
+
+#game-info-tab {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.info-item {
+    margin-right: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 300px;
+    border-radius: 5px;
+}

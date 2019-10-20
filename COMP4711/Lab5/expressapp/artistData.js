@@ -1,10 +1,44 @@
 let a = [];
 let count = 0;
 
+var obj = {
+    artists: []
+};
+
+var fs = require('fs');
+
+function initDatabase() {
+    console.log("Initialize Database is called");
+    var content = fs.readFileSync("../data/mylocalfile.json");
+
+    console.log("Output Content : \n"+ content);
+    console.log("\n *EXIT* \n");
+
+    var jsonContent = JSON.parse(content);
+    console.log("length of json:", jsonContent.artists.length);
+    console.log("id:", jsonContent.artists[0].id);
+    console.log("name:", jsonContent.artists[0].name);
+    console.log("about:", jsonContent.artists[0].about);
+    console.log("url:", jsonContent.artists[0].imageurl);
+
+    for (let i = 0; i < jsonContent.artists.length; i++) {
+        a.push(jsonContent.artists[i]);
+    }
+
+}
+
 function addArtists(e) {
     e.id = count;
     count = count + 1;
-    a.push(e);
+    a.push(e); // probably don't need this anymore. Need to remove the array object "a"
+
+    obj.artists.push(e);
+    var jsonObj =   JSON.stringify(obj);
+    
+    fs.writeFile("../data/mylocalfile.json", jsonObj, function(err) {
+        if (err) throw err;
+        console.log('write to JSON complete');
+    });
 }
 
 function getAllArtists() {
@@ -12,7 +46,9 @@ function getAllArtists() {
 }
 
 function getArtist(id) {
+
     return a[id];
+    //return fs[id];
 }
 
 function getCount() {
@@ -40,6 +76,7 @@ function deleteArtist(id) {
  }
 
 module.exports = {
+    init : initDatabase,
     add : addArtists,
     getall : getAllArtists,
     getpeople: getArtist,

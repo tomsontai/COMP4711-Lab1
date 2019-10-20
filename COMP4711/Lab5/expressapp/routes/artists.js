@@ -4,6 +4,8 @@ let mod = require('../artistData');
 
 const router = express.Router();
 
+mod.init();
+
 router.get('/delete/:id', (req,res) => {
    console.log("============Get Delete Artist=================");
    console.log(req.params.id);
@@ -44,6 +46,7 @@ router.post('/artists/search', (req,res) => {
    //res.redirect(301, '/artists');
 }); 
 
+// Add to database
  router.post('/artists/add', (req, res) => {
     let a_name = req.body.name;
     let a_about = req.body.about;
