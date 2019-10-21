@@ -7,7 +7,7 @@ var obj = {
 
 var fs = require('fs');
 
-function initDatabase() {
+function initializeArray() {
     console.log("Initialize Database is called");
     var content = fs.readFileSync("../data/mylocalfile.json");
 
@@ -22,6 +22,7 @@ function initDatabase() {
     console.log("url:", jsonContent.artists[0].imageurl);
 
     for (let i = 0; i < jsonContent.artists.length; i++) {
+        jsonContent.artists[i].id = count++;
         a.push(jsonContent.artists[i]);
     }
 
@@ -76,7 +77,7 @@ function deleteArtist(id) {
  }
 
 module.exports = {
-    init : initDatabase,
+    init : initializeArray,
     add : addArtists,
     getall : getAllArtists,
     getpeople: getArtist,

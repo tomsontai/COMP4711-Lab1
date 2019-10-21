@@ -6,6 +6,10 @@ const router = express.Router();
 
 mod.init();
 
+router.get('/', function (req,res) {
+   res.redirect(301, '/artists');
+});
+
 router.get('/delete/:id', (req,res) => {
    console.log("============Get Delete Artist=================");
    console.log(req.params.id);
