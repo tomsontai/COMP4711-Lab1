@@ -1,2 +1,2 @@
-# COMP4711-Lab1
-Lab1
+# COMP4711
+https://tomsontai.github.io/
