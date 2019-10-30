@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <head>
+        <meta charset="utf-8">
+        <title>Leaderboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/styles.css">
+        <script src="./scripts/Globals.js" defer></script>
+        <script src="./scripts/Main.js" defer></script>
+    </head>
+
+    <body>
+
+
+        <div class="col-md-8">
+            <form action='leaderboard.html'>
+                <h1>Enter Name: </h1>
+                <input type="text" id="name" />
+                <br/>
+                <br />
+                <button id="restart" type="submit" onclick="setName()">Submit</button>
+            </form>
+
+            <br />
+
+            <a href="./index.html">
+                <button id="restart" type="submit">
+                    Play Again
+                </button>
+            </a>
+        </div>
+        <script>
+            function setName() {
+            
+                let playerData = localStorage.players;
+
+                let players = [];
+
+                if (playerData != null) 
+                    players = JSON.parse(playerData);
+                
+
+                let tempScore = localStorage.Score;
+                
+                let name = document.getElementById("name").value;
+
+                let score = {name: name, score: tempScore};
+
+                players.push(score);
+
+                //localStorage.removeItem("Score");
+
+                localStorage.players = JSON.stringify(players);
+                
+                
+
+
+            //     let name = document.getElementById("name").value;
+            //     console.log("what is name? --- " + name);
+                
+            //     // var highscore = -999; // impossibly low number the user will probably bored to not get. 
+            //     // localStorage.setItem("highscore", highscore);
+            //     let tempScore = localStorage.Score;
+            //     if (window.localStorage.length <= 1) {
+            //         localStorage.setItem(name, tempScore);
+            //     } else {
+            //         if (localStorage.length < 6) { 
+            //             localStorage.setItem(name, tempScore);
+            //         } else {
+            //             var minScorer;
+            //             var tempScoreArr = [];
+            //             for (let i = 0; i < localStorage.length; i++) {
+            //                 tempScoreArr.push(localStorage.getItem(localStorage.key(i)));
+            //             }
+            //             minScorer = Math.min(tempScoreArr);
+            //             for (let i = 0; i < localStorage.length; i++) {
+            //                 console.log("for loop entered.");
+            //                 if (tempScore > parseInt(localStorage.getItem(localStorage.key(i)))) {
+            //                     console.log("current score is compared");
+            //                     // if currentScore's bigger than any of them, insert into localStorage
+            //                     window.localStorage.removeItem(localStorage.key(i));
+            //                     localStorage.setItem(name, tempScore);
+            //                     break; 
+            //                 }
+            //             }
+                        
+
+            //         }
+
+            //     }
+            //     // after done, remove Score
+            //     localStorage.removeItem("Score");
+            // }
+            }
+        </script>
+
+        <!--
+        <div id="game-info-tab">
+            <div class="info-item">
+                <h3 id="tiles">TILES 0</h3>
+            </div>
+            <div class="info-item">
+                <h3 id="trials">TRIAL 1</h3>
+            </div>
+            <div class="info-item"><h3 id="score">SCORE 0</h3></div>
+        </div>
+        <div id="container">
+            <button id="play-button" onclick="play()">
+               Play
+            </button>
+        </div>
+        <h2 id="attempt-counter"/>
+
+        -->
+    </body>
+</html>
+
