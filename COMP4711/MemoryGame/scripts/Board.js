@@ -62,6 +62,8 @@ class Board {
     //
     //Board must be instantiated first before re-rendered. This method is to set up the next game. 
     rerenderBoard() {
+        let playSound = document.getElementById('RestartGame');
+        playSound.play();
         this.resizeBoard();
         this.setCurrentTrial();
 

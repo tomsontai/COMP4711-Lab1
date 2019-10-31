@@ -1,10 +1,11 @@
 //Starts the game
 function play() {
+    let playSound = document.getElementById('RestartGame');
+    playSound.play();
     const board = new Board();
     board.renderBoard();
     Tile.setTileTab(board.blueTileAllocation);
     board.container.removeChild(document.getElementById("play-button"));
-    playSound();
 }
 
 // terminate the game
@@ -49,9 +50,3 @@ function setLeaderBoardScore() {
     }
 }
 
-// plays audio 
-function playSound() {
-    //let playSound = document.getElementById('soundTest');
-    var audio = new Audio("../audio/RestartGame.wav");
-    audio.play();
-}
