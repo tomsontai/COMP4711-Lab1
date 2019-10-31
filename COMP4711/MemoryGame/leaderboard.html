@@ -15,24 +15,8 @@
             </ol>
             <a href="./index.html"><button id="restart" type="submit">Play Again</button></a>
         </div>
-        <script>
-            function setLeaderBoardScore() {
-                var leaderboard = document.getElementById("leaderboard");
-                
-                var playerData = JSON.parse(localStorage.players);
-
-                playerData.sort(function(a, b){return b.score - a.score});
-
-                for (let i = 0; i < playerData.length; i++) {
-                    if (i == 5) // Only display top 5. 
-                        break;
-                    let li = document.createElement('li');
-                    li.textContent = "Name: " + playerData[i].name + " ---- " + "Score: " + playerData[i].score;
-                    leaderboard.appendChild(li);
-                }
-            }
-        </script>
-   
- 
+        <audio id="RestartGame">
+            <source src="./audio/RestartGame.wav" type="audio/mpeg">
+        </audio>
     </body>
 </html>

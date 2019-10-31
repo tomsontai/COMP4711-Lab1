@@ -4,6 +4,7 @@ function play() {
     board.renderBoard();
     Tile.setTileTab(board.blueTileAllocation);
     board.container.removeChild(document.getElementById("play-button"));
+    playSound();
 }
 
 // terminate the game
@@ -46,4 +47,11 @@ function setLeaderBoardScore() {
         li.textContent = "Name: " + playerData[i].name + " ---- " + "Score: " + playerData[i].score;
         leaderboard.appendChild(li);
     }
+}
+
+// plays audio 
+function playSound() {
+    //let playSound = document.getElementById('soundTest');
+    var audio = new Audio("../audio/RestartGame.wav");
+    audio.play();
 }

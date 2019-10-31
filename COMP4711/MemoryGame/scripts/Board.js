@@ -1,3 +1,10 @@
+// plays audio 
+function playSound() {
+    //let playSound = document.getElementById('soundTest');
+    var audio = new Audio("../audio/RestartGame.wav");
+    audio.play();
+}
+
 /*
 Creates a board object. 
 */
@@ -16,6 +23,9 @@ class Board {
 
     renderBoard() {
         this.lockBoardInput();
+
+        playSound();
+
         const board = this.initBoardGraphic();
         availableAttempts = 0;
 
@@ -45,6 +55,8 @@ class Board {
         }
         // after appending the tiles, rotate the board. 
         this.rotateBoard();
+
+        
     }
 
     //
@@ -67,15 +79,15 @@ class Board {
         
     }
 
-    renderTerminate() {
-        var btn = document.createElement('button');
-        btn.setAttribute('class', 'btn btn-danger');
-        btn.setAttribute('id', 'terminate');
-        btn.setAttribute('onclick', 'terminateGame()');
-        btn.setAttribute('value', 'Terminate');
+    // renderTerminate() {
+    //     var btn = document.createElement('button');
+    //     btn.setAttribute('class', 'btn btn-danger');
+    //     btn.setAttribute('id', 'terminate');
+    //     btn.setAttribute('onclick', 'terminateGame()');
+    //     btn.setAttribute('value', 'Terminate');
          
-        // <button class="btn btn-danger" id="terminate" onclick="terminateGame()">Terminate</button>
-    }
+    //     // <button class="btn btn-danger" id="terminate" onclick="terminateGame()">Terminate</button>
+    // }
 
     rotateBoard() {
         setTimeout(() => {
@@ -115,6 +127,9 @@ class Board {
         board.id = "board";
         this.boardGraphic = board;
         this.container.appendChild(board);
+
+        
+
         return board;
     }
 
