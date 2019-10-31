@@ -9,13 +9,11 @@
     </head>
 
     <body>
-
-
         <div class="col-md-8">
             <form action='leaderboard.html'>
                 <h1>Enter Name: </h1>
                 <input type="text" id="name" />
-                <br/>
+                <br />
                 <br />
                 <button id="restart" type="submit" onclick="setName()">Submit</button>
             </form>
@@ -47,49 +45,7 @@
 
                 players.push(score);
 
-                //localStorage.removeItem("Score");
-
                 localStorage.players = JSON.stringify(players);
-                
-                
-
-
-            //     let name = document.getElementById("name").value;
-            //     console.log("what is name? --- " + name);
-                
-            //     // var highscore = -999; // impossibly low number the user will probably bored to not get. 
-            //     // localStorage.setItem("highscore", highscore);
-            //     let tempScore = localStorage.Score;
-            //     if (window.localStorage.length <= 1) {
-            //         localStorage.setItem(name, tempScore);
-            //     } else {
-            //         if (localStorage.length < 6) { 
-            //             localStorage.setItem(name, tempScore);
-            //         } else {
-            //             var minScorer;
-            //             var tempScoreArr = [];
-            //             for (let i = 0; i < localStorage.length; i++) {
-            //                 tempScoreArr.push(localStorage.getItem(localStorage.key(i)));
-            //             }
-            //             minScorer = Math.min(tempScoreArr);
-            //             for (let i = 0; i < localStorage.length; i++) {
-            //                 console.log("for loop entered.");
-            //                 if (tempScore > parseInt(localStorage.getItem(localStorage.key(i)))) {
-            //                     console.log("current score is compared");
-            //                     // if currentScore's bigger than any of them, insert into localStorage
-            //                     window.localStorage.removeItem(localStorage.key(i));
-            //                     localStorage.setItem(name, tempScore);
-            //                     break; 
-            //                 }
-            //             }
-                        
-
-            //         }
-
-            //     }
-            //     // after done, remove Score
-            //     localStorage.removeItem("Score");
-            // }
             }
         </script>
 

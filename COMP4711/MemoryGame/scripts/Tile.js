@@ -30,6 +30,13 @@ class Tile {
                 board.lockBoardInput();
                 board.rerenderBoard();
             }
+
+            // if score is 0 or negative, terminate game and set Score to 0. 
+            if (currentScore <= 0) {
+                alert('You lose');
+                localStorage.setItem("Score", 0);
+                window.location = './summary.html';
+            }
         }
 
         return tile;
